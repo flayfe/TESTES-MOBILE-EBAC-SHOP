@@ -1,7 +1,6 @@
 const { join } = require('path')
 
 exports.config = {
-    hostname: 'localhost',
     port: 4723,
     path: '/wd/hub',
     specs: [
@@ -18,13 +17,12 @@ exports.config = {
         ]
     ],
     capabilities: [{
-        "platformName": "Android",
-        "appium:options": {
-            "platformVersion": "8.1",
-            "deviceName": "ebac-qe",
-            "automationName": "UiAutomator2",
-            "app": join(process.cwd(), './app/android/loja-ebac.apk'),
-            "appWaitActivity": 'com.woocommerce.android.ui.login.LoginActivity'
-        }
-    }]
+            "platformName": "Android",
+            "appium:platformVersion": "8.1",
+            "appium:deviceName": "ebac-qe",
+            "appium:automationName": "UiAutomator2",
+            "appium:appPackage": "com.woocommerce.android",
+            "appium:appActivity": ".ui.main.MainActivity",
+            "appium:appWaitActivity": ".ui.login.LoginActivity" 
+        }]
 }
