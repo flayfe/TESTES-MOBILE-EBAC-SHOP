@@ -1,4 +1,5 @@
 const homeScreen = require("../screens/home.screen");
+<<<<<<< HEAD
 const loginScreen = require("../screens/login.screen");
 const myStoreScreen = require("../screens/myStore.screen");
 
@@ -19,3 +20,12 @@ describe('Access Admin Panel', () => {
         expect(await myStoreScreen.getStoreName()).toEqual('EBAC - Shop')
     });
 });
+=======
+
+describe('Acess Admin Panel', () => {
+    it('Shoud login with valid credentials', async () => {
+        await homeScreen.goToLogin()
+        expect(await $('id:textinput_placeholder')).toBeDisplayed()
+    })
+})
+>>>>>>> 38ddc3513c11f3cc40b740a62d14d9e32c398a3d
